@@ -1,19 +1,25 @@
-# Build stage using Node.js
+# frontend/Dockerfile
+
+# 1) Build stage
 FROM node:20-alpine AS build
 WORKDIR /app
 
-# Copy package.json, tsconfig.json, and vite.config.ts first
+# Copy Vite & TypeScript config + deps manifest
 COPY package.json tsconfig.json vite.config.ts ./
 
-# Copy the rest of the app files
-COPY public ./public
+# Copy the HTML entrypoint
+COPY index.html ./
+
+# Copy your source
 COPY src ./src
 
-# Install dependencies and build the app
+# Install and build
 RUN npm ci && npm run build
 
-# Nginx stage to serve the app
+# 2) Production stage: serve with Nginx
 FROM nginx:alpine
+# Copy the built files
 COPY --from=build /app/dist /usr/share/nginx/html
+# Copy your custom Nginx config (make sure this exists)
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
