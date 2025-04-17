@@ -1,8 +1,5 @@
-fastapi==0.111.0
-uvicorn[standard]==0.29.0
-openai==1.23.0
-python-dotenv==1.0.1
-slowapi==0.1.8
-pydantic-settings==2.2.1
-sse-starlette==1.6.5
-prometheus-fastapi-instrumentator==6.1.0
+fastapi>=0.100.0
+uvicorn[standard]>=0.20.0
+openai>=1.0.0 # Added openai library
+python-dotenv>=1.0.0 # Added dotenv for environment variables
+frontend/package-lock.json
