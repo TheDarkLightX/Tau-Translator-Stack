@@ -2,4 +2,3 @@ fastapi>=0.100.0
 uvicorn[standard]>=0.20.0
 openai>=1.0.0 # Added openai library
 python-dotenv>=1.0.0 # Added dotenv for environment variables
-frontend/package-lock.json
