@@ -7,16 +7,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@monaco-editor/react": "^4.4.6",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "clsx": "^2.1.0",
+    "monaco-editor": "^0.47.0",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
-    "monaco-editor": "^0.47.0",
-    "clsx": "^2.1.0"
-  },
- "dependencies": {
-  "react": "^18.3.0",
-  "react-dom": "^18.3.0",
-  "clsx": "^2.1.0",
-  "monaco-editor": "^0.47.0",
-  "@monaco-editor/react": "^4.4.6"
-},
-
+    "react-syntax-highlighter": "^15.6.1"
+  }
+}

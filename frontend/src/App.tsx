@@ -1,6 +1,8 @@
 import { useState, useCallback } from "react";
 import { useEventSource } from "./hooks/useEventSource";
 import { executeTau } from "./api";
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 export default function App() {
   const [english, setEnglish] = useState("");
@@ -62,7 +64,9 @@ export default function App() {
         <button onClick={translate}>Translate</button>
         <button onClick={runTau}>Run on Tau</button>
       </div>
-      <pre style={{ background: '#f0f0f0', padding: 10 }}>{tau}</pre>
+      <SyntaxHighlighter language="tau" style={atomDark} >
+        {tau}
+      </SyntaxHighlighter>
       <pre style={{ background: '#000', color: '#0f0', padding: 10, height: 200, overflowY: 'auto' }}>{log}</pre>
     </div>
   );
